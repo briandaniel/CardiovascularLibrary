@@ -1,0 +1,22 @@
+#!/bin/sh
+
+rm -fr CMake*
+
+# Source
+SOURCE_DIR=../Source/
+# Install
+INSTALL_DIR=../Install/
+
+# 2. Path to UtilityFunctionLibrary
+UtilityFunctionLibrary_DIR=$HOME/CppLibraries/UtilityFunctionLibrary
+PNOL_DIR=$HOME/CppLibraries/ParallelNonlinearOptimizationLibrary
+
+# Cmake commands
+cmake \
+-D CMAKE_INSTALL_PREFIX:PATH=$INSTALL_DIR \
+-D CMAKE_CXX_FLAGS:STRING="-g -O3 -march=native -std=c++0x -fopenmp -pedantic -fno-var-tracking -fprofile-arcs -ftest-coverage " \
+-D CMAKE_C_FLAGS:STRING="-g -O3 -march=native -std=c++0x -fopenmp -pedantic -fno-var-tracking -fprofile-arcs -ftest-coverage " \
+-D UtilityFunctionLibrary_INSTALL_DIR=$UtilityFunctionLibrary_DIR/Install/ \
+-D PNOL_INSTALL_DIR=$PNOL_DIR/Install \
+\
+$SOURCE_DIR
