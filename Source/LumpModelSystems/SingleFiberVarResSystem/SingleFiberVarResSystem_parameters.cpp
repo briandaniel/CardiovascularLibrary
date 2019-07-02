@@ -70,7 +70,7 @@ void ParamSingleFiberVarRes::setDefaultParams()
 	// Timing and computation
 	Tc = 1.0;
 	Ncyc = 10;
-	NtStepsCycle = 1000;
+	NtStepsCycle = 2000;
 
 	// newton iteration parameters
 	xMinDiff = 1e-3;
@@ -104,8 +104,8 @@ void ParamSingleFiberVarRes::setDefaultParams()
 
 	activeDurationAdjustment = 0.0;
 
-	outputFile = "Output/SingleFiberVarRes_output.m";
-	paramOutputFile = "Output/SingleFiberVarRes_params.m";
+	outputFile = "SingleFiberVarRes_output.m";
+	paramOutputFile = "SingleFiberVarRes_params.m";
 	initialValuesFileName = "Input/initialValuesSingleFiberVarRes.txt";
 
 
